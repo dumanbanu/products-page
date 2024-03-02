@@ -1,0 +1,40 @@
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0044cc; 
+    color: white;
+    padding: 10px 20px;
+  }
+  
+  .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  .search-bar input {
+    padding: 5px;
+    margin-right: 5px;
+  }
+  
+  .search-bar button {
+    padding: 5px 10px;
+    background-color: white; 
+    color: #0044cc;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .cart-info {
+    margin-right: 15px; 
+    font-weight: bold;
+  }
+  
+  .user-name {
+    font-weight: bold;
+  }
