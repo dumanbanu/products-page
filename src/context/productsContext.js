@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useCallback, useMemo, useState } from "react";
 
 
 
@@ -15,7 +15,22 @@ const [filterObject , setFilterObject]  = useState({
 })
 
 
-const [productList , setProductList] = useState([])
+
+
+
+
+const [productList , setProductList] = useState([]);
+const [cartItems , setCartItems] = useState([])
+const [selectedProduct , setSelectedProduct] = useState({});
+
+const totalPrice =  useMemo(() => {
+  return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+} , [cartItems])
+
+
+
+
+
 
 
 return(
@@ -23,7 +38,12 @@ return(
     filterObject,
     setFilterObject,
     productList,
-    setProductList
+    setProductList,
+    cartItems,
+    setCartItems,
+    totalPrice,
+    selectedProduct,
+    setSelectedProduct
   }}
 >
   {children}

@@ -1,0 +1,33 @@
+.search-and-brand-filter {
+    background-color: white;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .search-box {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  
+  .search-box input {
+    border: 1px solid #ddd;
+    padding: 8px;
+    width: 100%;
+  }
+  
+  .search-box button {
+    background-color: #eee;
+    border: none;
+    padding: 8px;
+  }
+  
+  .brand-filter label {
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  .brand-filter input[type="checkbox"] {
+    margin-right: 8px;
+  }
+  
