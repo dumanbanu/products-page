@@ -9,7 +9,7 @@ import { searchProductsUsingGet } from '../../api/services/productService';
 
 export default function Index() {
 
-  const {productList , setProductList ,setFilterObject , filterObject} = useContext(ProductsContext);
+  const { setProductList ,setFilterObject , filterObject} = useContext(ProductsContext);
   const [selectedOption, setSelectedOption] = useState('newToOld');
 
 
@@ -40,8 +40,9 @@ export default function Index() {
 
 
   return (
+    <div>
+      <div className='sort-by'>Sort By</div>
     <div className="sort-options">
-    <h4>Sort By</h4>
     {[
       { id: 'order', label: 'Old to new' , value : "" },
       { id: 'newToOld', label: 'New to old' },
@@ -58,6 +59,7 @@ export default function Index() {
         {option.label}
       </label>
     ))}
+  </div>
   </div>
   )
 }

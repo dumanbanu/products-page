@@ -2,6 +2,7 @@
     background-color: white;
     padding: 16px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom :40px;
   }
   
   .search-box {
@@ -29,5 +30,13 @@
   
   .brand-filter input[type="checkbox"] {
     margin-right: 8px;
+  }
+
+  .title{
+    color: #333333B2;
+    font-size: 12px;
+    font-weight: 400;
+    padding-bottom: 2px;
+
   }
   

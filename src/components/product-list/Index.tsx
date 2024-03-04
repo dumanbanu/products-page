@@ -1,23 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './style.css';
 import ProductCard from "../product-card/index";
 import Pagination from '../pagination/Index';
 import { useContext } from 'react';
 import { ProductsContext } from '../../context/productsContext';
 
-
-
-
-
 const ProductsGrid = () => {
 
+  const { productList, filterRequest } = useContext(ProductsContext)
 
-const {productList , filterRequest} = useContext(ProductsContext)
-
-
-
-
-  const totalPages = filterRequest?.page + 4 | 5; 
+  const totalPages = filterRequest?.page + 4 | 5;
 
 
   return (

@@ -4,5 +4,19 @@
 
 
 .page-contents{
-    width: 75%;
+    /* width: 75%; */
 }
+
+@media (min-width: 992px) {
+ 
+  }
+  
+  .page-contents, .ordered-cart-container {
+    padding: 1rem; 
+  }
+  
+  @media (max-width: 991px) { 
+    .page-contents, .ordered-cart-container {
+      padding: 0.5rem;
+    }
+  }

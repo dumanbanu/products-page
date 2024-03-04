@@ -1,20 +1,28 @@
-
 .sort-options {
-    background-color: white;
-    padding: 16px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .sort-options h4 {
-    margin-bottom: 16px;
-  }
-  
-  .sort-options label {
-    display: block;
-    margin-bottom: 8px;
-  }
-  
-  .sort-options input[type="radio"] {
-    margin-right: 8px;
-  }
-  
+  background-color: white;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom:40px;
+}
+
+.sort-options h4 {
+  margin-bottom: 16px;
+}
+
+.sort-options label {
+  display: block;
+  margin-bottom: 8px;
+  font-size:14px;
+  color:#333333
+}
+
+.sort-options input[type="radio"] {
+  margin-right: 8px;
+}
+
+.sort-by {
+  color: #333333B2;
+  font-size: 12px;
+  font-weight: 400;
+  padding-bottom: 2px;
+}

@@ -1,0 +1,13 @@
+.product-name {
+    font-size: 14px;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    max-width: 100%;
+}
+
+.product-price {
+    font-size: 14px;
+    color: #2A59FE;
+}

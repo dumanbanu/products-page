@@ -1,3 +1,32 @@
-.home-page-container{
-    display: flex;
+
+
+.home-page-container .left, 
+.home-page-container .middle, 
+.home-page-container .right {
+  padding: 15px;
+}
+
+
+@media (max-width: 767.98px) {
+  .home-page-container .left,
+  .home-page-container .right {
+    order: 2;
+  }
+
+  .home-page-container .middle {
+    order: 1; 
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .home-page-container .left,
+  .home-page-container .right {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .home-page-container {
+  }
 }

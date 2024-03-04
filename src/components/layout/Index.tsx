@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { ProductsContext } from "../../context/productsContext";
 import Checkout from "../cart/checkout/Index";
 import "./style.css";
+import { Col, Container, Row } from "react-bootstrap";
 
 function Layout({children}) {
 
@@ -38,30 +39,25 @@ setCartItems(savedCart)
 
   return (
     <>
-      <Header />
-      <div className="page-container">
-
-
-        
-      <div className="page-contents">
-      {children}
-      </div>
-
-      <div className="ordered-cart-container">
-
-      {
-          Boolean(cartItems.length) &&
-        <Cart items={cartItems} onDecrease={onDecrease} onIncrease={onIncrease}></Cart>
-        }
-        <Checkout totalPrice={totalPrice}></Checkout>
-
-
-      </div>
-
-
-      </div>
-
-    </>
+    <Header />
+    <Container className="d-flex justify-content-center p-0">
+      <Row>
+        <Col xs={12} className="col-10">
+          <Row>
+            <Col xs={12} lg={9} className="page-contents">
+              {children}
+            </Col>
+            <Col xs={12} lg={3} className="ordered-cart-container">
+              {Boolean(cartItems.length) && (
+                <Cart items={cartItems} onDecrease={onDecrease} onIncrease={onIncrease} />
+              )}
+              <Checkout totalPrice={totalPrice} />
+            </Col>
+          </Row>
+        </Col>
+      </Row>
+    </Container>
+  </>
   );
 }
 

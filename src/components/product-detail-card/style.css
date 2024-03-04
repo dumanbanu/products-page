@@ -9,8 +9,7 @@
   
   .product-detail-image {
     background-color: #ccc;
-    width: 200px; 
-    height: 200px; 
+    height: 500px; 
     margin-right: 16px;
   }
   
@@ -24,8 +23,11 @@
   }
   
   .product-detail-price {
-    color: #333;
+    color: #007bff;
     margin: 8px 0;
+    font-weight: 500;
+    font-size:25px;
+
   }
   
   .product-detail-add-to-cart-btn {
@@ -37,6 +39,7 @@
     cursor: pointer;
     margin: 8px 0;
     transition: background-color 0.2s ease;
+    width: 80%;
   }
   
   .product-detail-add-to-cart-btn:hover {
@@ -46,5 +49,10 @@
   .product-detail-description {
     color: #666;
     line-height: 1.6;
+    width: 90%;
   }
   
+  .product-detail-name{
+    font-weight: 500;
+    font-size:25px;
+  }
