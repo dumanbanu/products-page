@@ -40,23 +40,23 @@ setCartItems(savedCart)
   return (
     <>
     <Header />
-    <Container className="d-flex justify-content-center p-0">
-      <Row>
-        <Col xs={12} className="col-10">
-          <Row>
-            <Col xs={12} lg={9} className="page-contents">
+    <div className="container d-flex justify-content-center p-0">
+      <div className="row col-12">
+        <div className="col-xs-12 col-lg-12">
+          <div className="row">
+            <div className="col-xs-12 col-md-9 page-contents">
               {children}
-            </Col>
-            <Col xs={12} lg={3} className="ordered-cart-container">
+            </div>
+            <div className="col-xs-12 col-md-3 ordered-cart-container">
               {Boolean(cartItems.length) && (
                 <Cart items={cartItems} onDecrease={onDecrease} onIncrease={onIncrease} />
               )}
               <Checkout totalPrice={totalPrice} />
-            </Col>
-          </Row>
-        </Col>
-      </Row>
-    </Container>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </>
   );
 }

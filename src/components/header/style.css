@@ -5,6 +5,11 @@
   color: white; 
 }
 
+.container-fluidu{
+  padding-right: 8%;
+  padding-left: 8%;
+}
+
 .search-container {
   display: flex;
   width: 100%;

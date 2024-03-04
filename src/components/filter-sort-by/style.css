@@ -18,6 +18,7 @@
 
 .sort-options input[type="radio"] {
   margin-right: 8px;
+  accent-color: rgb(0, 123, 255);
 }
 
 .sort-by {

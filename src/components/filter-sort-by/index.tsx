@@ -25,18 +25,18 @@ export default function Index() {
     setFilterObject(prevState => {
       return { ...prevState, ...newFilters};
     });  
+    setSelectedOption(option.id)
   }
 
   useEffect(() => {
-
-    if (filterObject.sortBy & filterObject.order) {
+    if (filterObject.sortBy && filterObject.order) {
       searchProductsUsingGet(filterObject).then(data => {
         console.log(data)
         setProductList(data);
       });
     }
 
-  }, [filterObject, setProductList]);
+  }, [filterObject, setProductList,selectedOption,setSelectedOption]);
 
 
   return (
@@ -44,10 +44,10 @@ export default function Index() {
       <div className='sort-by'>Sort By</div>
     <div className="sort-options">
     {[
-      { id: 'order', label: 'Old to new' , value : "" },
-      { id: 'newToOld', label: 'New to old' },
-      { id: 'orderBy', label: 'Price high to low' , parameter : [{key : "sortBy" , value:"price"} , {key:"order"  , value: "desc" }] },
-      { id: 'priceLowToHigh', label: 'Price low to High' }
+     { id: 'order', label: 'Old to new' , value : "" , parameter : [{key : "sortBy" , value:"createdAt"} , {key:"order"  , value: "desc" }] },
+     { id: 'newToOld', label: 'New to old' , parameter : [{key : "sortBy" , value:"createdAt"} , {key:"order"  , value: "asc" }] },
+     { id: 'orderBy', label: 'Price high to low' , parameter : [{key : "sortBy" , value:"price"} , {key:"order"  , value: "desc" }] },
+     { id: 'priceLowToHigh', label: 'Price low to High' , parameter : [{key : "sortBy" , value:"price"} , {key:"order"  , value: "asc" }] }
     ].map((option) => (
       <label key={option.id}>
         <input

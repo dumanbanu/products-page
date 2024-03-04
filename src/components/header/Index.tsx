@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom"
 import { searchProductsUsingGet } from '../../api/services/productService';
 import { Button, Col, Container, FormControl, InputGroup, Row } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { faClock } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -15,56 +14,60 @@ export default function Index() {
   const navigater = useNavigate()
   const { totalPrice, setFilterObject, filterObject, setProductList } = useContext(ProductsContext)
 
-  const [searchInputData, setSearchInputData] = useState<string | null>();
-
+  const [searchInputData , setSearchInputData] = useState<string|null>(null);
   const searchButtonClickEventHandler = () => {
     setFilterObject(prevState => {
       return { ...prevState, name: searchInputData };
     });
   }
 
+
+  const onKeyDownEventHandler = (event) =>{
+    if(event.key === "Enter"){
+      searchButtonClickEventHandler();
+    }
+}
   useEffect(() => {
-    if (filterObject.name) {
+
       searchProductsUsingGet(filterObject).then(data => {
         setProductList(data);
       });
-    }
+    
   }, [filterObject, setProductList]);
 
   return (
-    <Container fluid className="bg-primary py-2">
-      <Row className="justify-content-center">
-        <Col xs={10} md={8} xl={10}>
-          <Row>
-            <Col xs={4} md={2} className="d-flex align-items-center">
+    <div className="container-fluidu bg-primary py-2">
+      <div className="row justify-content-center">
+        <div className="col-xs-12 col-md-10 col-lg-12 col-xl-12">
+          <div className="row">
+            <div className="col-xs-4 col-md-2 d-flex align-items-center">
               <div className="logo" onClick={() => navigater("/")}>Eteration</div>
-            </Col>
-            <Col xs={4} md={3} className="d-flex align-items-center">
+            </div>
+            <div className="col-xs-4 col-md-3 d-flex align-items-center ">
               <div className="search-container">
                 <input
                   type="text"
                   className="search-input"
                   placeholder="Search"
                   value={searchInputData}
+                  onKeyDown={(event) => { onKeyDownEventHandler(event) }}
                   onChange={(e) => setSearchInputData(e.target.value)}
                 />
                 <button className="search-button" onClick={searchButtonClickEventHandler}>
                   <i className="fas fa-search"></i>
                 </button>
-
               </div>
-
-            </Col>
-            <Col xs={4} md={6} className="d-flex align-items-center justify-content-end">
+            </div>
+            <div className="col-xs-4 col-md-7 d-flex align-items-center justify-content-end">
               <div className="user-info">
                 <span className="cart-info me-2"> <i className="fas fa-briefcase "></i>{totalPrice} ₺</span>
                 <span className="user-name" > <i className="fas fa-user "></i>Banu</span>
               </div>
-            </Col>
-          </Row>
-        </Col>
-      </Row>
-    </Container>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 
 }

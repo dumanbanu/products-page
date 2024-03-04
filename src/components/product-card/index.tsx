@@ -33,14 +33,14 @@ const navigateToDetailPage = (pr :any) => {
   setSelectedProduct(pr);
   navigate("/detail");
   }
-  
-
-
   return(
-    <div className="product-card" >
+    <div className="product-card col-12" >
       <div className="product-image pointer"onClick={() => { navigateToDetailPage(product) }}></div>
+      <div>
       <div className="product-price pointer"onClick={() => { navigateToDetailPage(product) }}>{product.price} ₺</div>
-      <div className="product-name pointer"onClick={() => { navigateToDetailPage(product) }}> {product.name.length > 16 ? `${product.name.slice(0, 16)}...` : product.name}</div>
+      <div className="product-name pointer"onClick={() => { navigateToDetailPage(product) }}> {product.name.length > 15 ? `${product.name.slice(0,15)}...` : product.name}</div>
+      </div>
+
       <button className="add-to-cart-btn"  onClick={()  => {addToCartItemsEventHandler(product)}} >Add to Cart</button>
     </div>
   );

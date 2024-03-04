@@ -7,16 +7,17 @@ import { ProductsContext } from '../../context/productsContext';
 
 const ProductsGrid = () => {
 
-  const { productList, filterRequest } = useContext(ProductsContext)
+  const { productList, filterObject } = useContext(ProductsContext)
 
-  const totalPages = filterRequest?.page + 4 | 5;
-
-
+  const totalPages = filterObject?.page + 2;
+  
   return (
-    <div>
-      <div className="products-grid">
+<div className="container">
+      <div className="row">
         {productList?.map((product, index) => (
-          <ProductCard key={index} product={product} />
+          <div key={index} className="col-md-6 col-sm-12 col-xl-3">
+            <ProductCard product={product} />
+          </div>
         ))}
       </div>
       <Pagination totalPages={totalPages} />
