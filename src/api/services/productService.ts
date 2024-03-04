@@ -19,12 +19,11 @@ export const searchProductsUsingGet = async (requestFilterObject: FilterRequest)
             headers: { 'Content-Type': 'application/json' },
         });
 
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
+        if (response.ok) {
+            const products = await response.json();
+            return products;
         }
-
-        const products = await response.json();
-        return products;
+  
     } catch (error) {
         console.error('Fetch error:', error);
         throw error;

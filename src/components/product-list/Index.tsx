@@ -23,7 +23,7 @@ const {productList , filterRequest} = useContext(ProductsContext)
   return (
     <div>
       <div className="products-grid">
-        {productList.map((product, index) => (
+        {productList?.map((product, index) => (
           <ProductCard key={index} product={product} />
         ))}
       </div>
