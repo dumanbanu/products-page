@@ -4,7 +4,7 @@ import {
   Route,
   Routes
 } from "react-router-dom";
-import HomePage from "./pages/HomePage/Index"
+import HomePage from "./pages/HomePage/index"
 import ProductDetail from "./pages/ProductDetailPage/index"
 import ProductsContextProvider from './context/productsContext';
 import Layout from './components/layout/Index';

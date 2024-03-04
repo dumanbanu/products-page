@@ -29,8 +29,6 @@ export default function Index({title ='',multiOptionalFilterList= []}) {
   }
 
 
-
-
   return (
     <div>
       <div className='title'>{title}</div>

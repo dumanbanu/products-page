@@ -5,7 +5,6 @@ import { useContext } from "react";
 import { ProductsContext } from "../../context/productsContext";
 import Checkout from "../cart/checkout/Index";
 import "./style.css";
-import { Col, Container, Row } from "react-bootstrap";
 
 function Layout({children}) {
 

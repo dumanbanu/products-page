@@ -4,7 +4,6 @@ import { useContext } from 'react';
 import { ProductsContext } from '../../context/productsContext';
 import { useNavigate } from "react-router-dom"
 import { searchProductsUsingGet } from '../../api/services/productService';
-import { Button, Col, Container, FormControl, InputGroup, Row } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 

@@ -32,7 +32,7 @@ export default function Index() {
 
     <div className='row'>
       <div className='col-md-3 left'>
-        <FilterSortBy />
+        <FilterSortBy/>
         <FilterWithSearch title={"Brands"} multiOptionalFilterList={multiOptionalBrandsFilterOptions}/>
         <FilterWithSearch  title={"Model"} multiOptionalFilterList={multiOptionalModelFilterOptions} />
       </div>
